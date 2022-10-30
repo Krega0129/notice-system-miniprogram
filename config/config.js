@@ -1,1 +1,1 @@
-export const KEY = 'PRABZ-QBXWQ-4CH54-GXHCC-HA7NQ-C4BX4'
+export const KEY = ''
