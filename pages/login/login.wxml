@@ -1,0 +1,12 @@
+<cu-custom bgColor="bg-cyan" style="position: absolute;">
+  <text slot="content">授权登录</text>
+</cu-custom>
+
+<view class="flex justify-space-between" style="flex-direction: column; height: 100vh">
+  <view class="bg-cyan flex-sub flex justify-center padding-bottom-xl" style="flex-direction: column;">
+    <view class="text-center">
+      <image style="width: 128rpx; height: 128rpx" src="../../assets/img/wx_logo.png"></image>
+    </view>
+    <button open-type="getUserInfo" bindgetuserinfo="showLogin" class="text-center margin-top" type="primary">授权登录</button>
+  </view>
+</view>

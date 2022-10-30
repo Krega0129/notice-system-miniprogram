@@ -1,0 +1,35 @@
+/**app.wxss**/
+@import "/colorui/icon.wxss";
+@import "/colorui/main.wxss";
+@import "/assets/wxss/iconfont.wxss";
+
+.dp-flex {
+  display: flex;
+}
+
+.dp-in-bk {
+  display: inline-block;
+}
+
+.pos-re {
+  position: relative;
+}
+
+.pos-ab {
+  position: absolute;
+}
+
+.pos-fix {
+  position: fixed;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

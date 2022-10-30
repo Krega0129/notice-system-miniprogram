@@ -1,0 +1,39 @@
+<cu-custom bgColor="bg-gray" isBack="true">
+  <text slot="backText">返回</text>
+  <text slot="content">教师信息</text>
+</cu-custom>
+<view class="solids-bottom flex align-center bg-white" wx:if="{{hasBind}}">
+  <view class="flex-sub">
+    <view class="cu-form-group">
+      <view class="title">姓名</view>
+      <input type="text" placeholder="{{teacherInfo.user.name}}" disabled/>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">学院</view>
+      <input disabled placeholder="{{teacherInfo.user.college.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">邮箱</view>
+      <input disabled placeholder="{{teacherInfo.user.emails}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">电话号码</view>
+      <input disabled placeholder="{{teacherInfo.user.phone}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">办公地点</view>
+      <input disabled placeholder="{{teacherInfo.office}}"></input>
+    </view>
+  </view>
+</view>
+<view wx:else>
+    <view class="text-center">
+      <view class="text-xl padding">
+        <text class="text-black text-bold">你还未绑定身份</text>
+      </view>
+      <view class="text-xl">
+        <text class="text-black text-bold">请先前往绑定身份</text>
+      </view>
+    </view>
+  </view>
+

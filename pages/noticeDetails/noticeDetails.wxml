@@ -1,0 +1,43 @@
+<cu-custom bgColor="bg-cyan" isBack="true">
+  <text slot="content">活动详情</text>
+</cu-custom>
+
+<view class="bg-white padding-bottom margin-xs">
+  <view class="padding-lr-lg">
+    <view class="padding-tb text-bold">
+      <!-- <view class="flex justify-between text-xl flex-wrap">
+        <text class="text-{{statusColor[notice.status]}}">{{status[notice.status]}}</text>
+      </view> -->
+      <view class="text-center text-black text-lg text-bold">{{notice.name}}</view>
+      <view class="text-center margin-top">
+        <view class="cu-tag bg-{{statusColor[index]}} light sm round" wx:for="{{notice.tags}}">{{item}}</view>
+      </view>
+    </view>
+    <view style="text-indent: 2em;">
+      {{notice.content}}
+    </view>
+    <view class="margin-top">
+      <view wx:for="{{notice.images}}" class="text-center" bindtap="ViewImage" data-url="{{item}}">
+        <image src="{{item}}" mode="widthFix"></image>
+      </view>
+    </view>
+
+    <view class="margin-bottom-xs margin-top" wx:if="{{notice.startTime}}">
+      <text class="cuIcon-title text-xl text-green"></text>开始时间：{{notice.startTime}}
+    </view>
+    <view wx:if="{{notice.endTime}}">
+      <text class="cuIcon-title text-xl text-orange"></text>结束时间：{{notice.endTime}}
+    </view>
+
+    <view wx:if="{{notice.address}}" class="flex flex-wrap margin-top-lg">
+      <view class="cuIcon-location text-bold text-lg" bindtap="navigateToAddress"> {{notice.address.name}}</view>
+    </view>
+
+    <view class="flex justify-end margin-tb">
+      <view class="padding-right">
+        <!-- <view>—— {{notice.publisher || announcer.name}}</view> -->
+        <view>{{notice.releaseTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

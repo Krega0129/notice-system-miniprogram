@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "floatBtn": "../../components/floatBtn/floatBtn"
+  }
+}

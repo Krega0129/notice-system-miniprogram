@@ -1,0 +1,142 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": false,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": false,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "useApiHostProcess": false,
+    "userConfirmedBundleSwitch": false,
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.12.2",
+  "appid": "wxb52101cbf029cabd",
+  "projectname": "Takeaway-User",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/WCH/storeDetails/storeDetails",
+          "pathName": "pages/WCH/storeDetails/storeDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/bill/bill",
+          "pathName": "pages/WCH/bill/bill",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/editLocation/editLocation",
+          "pathName": "pages/WCH/editLocation/editLocation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/login/login",
+          "pathName": "pages/WCH/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/submitOrder/submitOrder",
+          "pathName": "pages/WCH/submitOrder/submitOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/express/express",
+          "pathName": "pages/WCH/express/express",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/expressDetails/expressDetails",
+          "pathName": "pages/WCH/expressDetails/expressDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/sociality/dynamicDetails/dynamicDetails",
+          "pathName": "pages/LSK/sociality/dynamicDetails/dynamicDetails",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/sociality/homePage/homePage",
+          "pathName": "pages/LSK/sociality/homePage/homePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/sociality/releaseDynamic/releaseDynamic",
+          "pathName": "pages/LSK/sociality/releaseDynamic/releaseDynamic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/mine/historyDynamic/historyDynamic",
+          "pathName": "pages/LSK/mine/historyDynamic/historyDynamic",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/WCH/home/home",
+          "pathName": "pages/WCH/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/mine/profile/profile",
+          "pathName": "pages/LSK/mine/profile/profile",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/LSK/orders/orders",
+          "pathName": "pages/LSK/orders/orders",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  }
+}

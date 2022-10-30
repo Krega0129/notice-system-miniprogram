@@ -1,0 +1,82 @@
+<cu-custom bgColor="bg-cyan" isBack="{{true}}">
+  <text slot="content">发布通知</text>
+</cu-custom>
+
+<view style="margin-bottom: 8vh">
+  <view class="cu-form-group">
+		<view class="title">标题<text class="text-red">*</text></view>
+		<input model:value="{{name}}" placeholder="请输入标题"></input>
+	</view>
+  <view class="cu-form-group">
+    <textarea  maxlength="{{300}}" placeholder="请填写内容" name="shareContent" value="{{content}}" bindinput="inputContent"
+      style="height:300rpx"><text class="text-gray" style="position:absolute;bottom:0;right:0">{{num}}/{{300}}</text></textarea>
+  </view>
+  <view class="cu-bar bg-white">
+		<view class="action">
+			图片上传
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+				<image src='{{imgList[index]}}' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+			<view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+		</view>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">开始时间</view><view class="flex-sub"></view>
+		<picker mode="date" start="{{startDate}}" end="2030-12-31" bindchange="DateChange" data-flag="start">
+			<view class="picker">
+				{{startDate || "选择日期"}}
+			</view>
+		</picker>
+    <picker mode="time" value="08:00" start="00:00" end="23:59" bindchange="TimeChange" data-flag="start">
+			<view class="picker">
+				{{startTime || "选择时间"}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+		<view class="title">结束时间</view><view class="flex-sub"></view>
+		<picker mode="date" start="{{endDate}}" end="2030-12-31" bindchange="DateChange" data-flag="end">
+			<view class="picker">
+				{{endDate || "选择日期"}}
+			</view>
+		</picker>
+    <picker mode="time" value="08:00" start="00:00" end="23:59" bindchange="TimeChange" data-flag="end">
+			<view class="picker">
+				{{endTime || "选择时间"}}
+			</view>
+		</picker>
+	</view>
+  <view class="cu-form-group">
+    <view class="title"><text class="cuIcon-location">地点</text></view>
+    <picker bindchange="PickerChange" model:value="{{idx}}" range-key="name" range="{{addressList}}">
+      <view class="picker">
+        {{addressList[idx].name || '选择地点'}}
+      </view>
+    </picker>
+  </view>
+  <view class="cu-form-group">
+    <view class="content">
+      <text class="cuIcon-tagfill text-red"></text>
+      <text class="text-grey">标签</text>
+    </view>
+    <view class="action">
+      <view class="cu-tag round bg-{{curColor[0]}} light" data-idx="0" data-tag="通知" bindtap="chooseTag">通知</view>
+      <view class="cu-tag round bg-{{curColor[1]}} light" data-idx="1" data-tag="活动" bindtap="chooseTag">活动</view>
+      <view class="cu-tag round bg-{{curColor[2]}} light" data-idx="2" data-tag="紧急" bindtap="chooseTag">紧急</view>
+    </view>
+  </view>
+
+  <button type="primary" style="position: absolute; bottom: 6vh; left: 50%; transform: translateX(-50%);" bindtap="releaseNotice">发布</button>
+</view>

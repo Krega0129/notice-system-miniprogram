@@ -1,0 +1,44 @@
+<cu-custom bgColor="bg-cyan">
+  <text slot="content">我的</text>
+</cu-custom>
+<view>
+  <view class="bg-white padding-lr margin-bottom-xs" bindtap="toPersonInfo">
+    <view class="padding-tb-xl flex justify-between align-center">
+      <view class=" flex align-center">
+        <view class="cu-avatar radius xl"><image src="{{userInfo.avatarUrl}}" mode='aspectFill' style="width:100%;height:100%"></image></view>
+        <block>
+          <view class="margin-left-xl">
+            <view class="margin-bottom-sm text-bold text-xl">{{userInfo.name}}</view>
+            <view class="text-sm">{{userInfo.userNo}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <block wx:for="{{curOptList}}">
+    <profileOption option="{{item}}"></profileOption>
+  </block>
+  
+
+  <!-- 身份绑定 -->
+  <!-- <view class="bg-white padding-lr margin-bottom-xs" bindtap="toIdentify">
+    <view class="padding-tb flex justify-between align-end">
+      <view class=" flex align-center">
+        <text class="cuIcon-messagefill text-xl text-blue"></text>
+        <text class="margin-left">身份绑定</text>
+      </view>
+      <view class="padding-right-xs"><text class="cuIcon-right"></text></view>
+    </view>
+  </view> -->
+  <!-- 关联教师 -->
+  <!-- <view class="bg-white padding-lr margin-bottom-xs" bindtap="getTeacherInfo">
+    <view class="padding-tb flex justify-between align-end">
+      <view class=" flex align-center">
+        <text class="cuIcon-dianhua text-xl text-yellow"></text>
+        <text class="margin-left">关联教师</text>
+      </view>
+      <view class="padding-right-xs"><text class="cuIcon-right"></text></view>
+    </view>
+  </view> -->
+</view>

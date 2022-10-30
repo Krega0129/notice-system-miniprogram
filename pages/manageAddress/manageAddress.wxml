@@ -1,0 +1,31 @@
+<cu-custom bgColor="bg-cyan" isBack="{{true}}">
+  <text slot="content">管理地点</text>
+</cu-custom>
+<view class="nowLocation text-cut padding-sm bg-white margin-bottom-xs top">
+  <!-- <text class="cuIcon-locationfill"></text> -->
+  <text>当前已创建地点：</text>
+</view>
+<scroll-view 
+  scroll-y 
+  style="height: calc(100vh - {{toBottom}}rpx)"
+  refresher-enabled="{{true}}"
+  refresher-threshold="{{100}}"
+  lower-threshold="{{20}}"
+  refresher-default-style="white"
+  refresher-background="#f1f1f1"
+  refresher-triggered="{{triggered}}"
+  bindrefresherrefresh="onRefresh"
+  >
+  <view class="cu-list menu">
+    <view class="cu-item bg-white" wx:for="{{addressList}}" wx:key="index">
+      <text class="cuIcon-location"> {{item.name}}</text>
+    </view>
+  </view>
+
+  <w-to-top-btn wx:if="{{showBackTop}}"></w-to-top-btn>
+  <view class="padding-sm text-center text-gray" wx:if="{{showEnd}}">--------- 我可是有底线的 ---------</view>
+
+  <view class="toTop pos-fix bg-green round text-center" style="right: 50rpx; bottom: 100rpx; z-index: 20" bindtap="toAddAdderss">
+    <view class="cuIcon-add margin-sm"></view>
+  </view>
+</scroll-view>

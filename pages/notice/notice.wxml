@@ -1,0 +1,75 @@
+
+<cu-custom bgColor="bg-cyan">
+  <text slot="content">通知</text>
+</cu-custom>
+<!-- 导航栏 -->
+<scroll-view class="bg-white nav scrollTop" style="position:fixed;z-index:100">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{TabName}}" wx:key="index"
+      bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+<scroll-view class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-orange cur':''}}" wx:for="{{TabName}}" wx:key="index"
+      bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+<scroll-view
+  scroll-y
+  style="height:calc(100vh - {{toTop}}rpx)"
+  refresher-enabled="{{true}}"
+  refresher-threshold="{{100}}"
+  lower-threshold="{{50}}"
+  refresher-default-style="white"
+  refresher-background="#f1f1f1"
+  refresher-triggered="{{isTriggered}}"
+  bindscrolltolower="toLoading"
+  bindrefresherrefresh="toRefresh"
+>
+  <block>
+    <view class="grid col-1">
+      <view class="padding-lr-sm  bg-gray">
+        <view class="bg-white radius flex margin-top-sm" bindtap="goToNoticeDetails" wx:for="{{curList}}"
+          data-id="{{item.id}}">
+          <view class="flex-treble">
+            <view class="solids-bottom">
+              <view>
+                <view class="padding-right cu-bar bg-white solid-bottom">
+                  <view class="action">
+                    <text class="cuIcon-title text-green"></text>
+                    <text class="text-black text-bold">通知</text>
+                  </view>
+                  <view>{{item.releaseTime}}</view>
+                </view>
+              </view>
+            </view>
+            <view class="cu-card article no-card">
+              <view class="cu-item shadow">
+                <view class="text-black text-bold padding">{{item.name}}</view>
+                <view class="content">
+                  <image wx:if="{{item.images.length}}" src="{{item.images[0]}}" mode="aspectFill"></image>
+                  <view class="desc">
+                    <view class="text-content">{{item.content}}</view>
+                    <view>
+                      <view class="cu-tag bg-{{statusColor[idx]}} light sm round" wx:for-index="idx" wx:for-item="tag" wx:for="{{item.tags}}">{{tag}}</view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="padding" wx:if="{{showEnd}}"><view class="text-center text-grey">----------------已经到底啦----------------</view></view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
+<floatBtn wx:if="{{isTeacher}}" route="/pages/addNotice/addNotice"></floatBtn>
+<view wx:if="{{!hasSubscribed}}" class="toTop pos-fix bg-green round text-center" style="right: 50rpx; bottom: 50rpx; z-index: 20; width: 3em; height: 3em; line-height: 3em;" bindtap="subScribe">
+  订阅
+</view>

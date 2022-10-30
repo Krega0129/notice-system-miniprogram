@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "profileOption": "../../components/profileOption/profileOption"
+  },
+  "navigationBarTextStyle": "black"
+}

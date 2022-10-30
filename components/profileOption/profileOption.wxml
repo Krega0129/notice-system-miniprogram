@@ -1,0 +1,11 @@
+<!--components/profileOption/profileOption.wxml-->
+
+<view class="bg-white padding-lr margin-bottom-xs" bindtap="toPage">
+    <view class="padding-tb flex justify-between align-end">
+      <view class="flex align-center">
+        <text class="cuIcon-{{option.icon}} text-xl text-{{option.color}}"></text>
+        <text class="margin-left">{{option.name}}</text>
+      </view>
+      <view class="padding-right-xs"><text class="cuIcon-right"></text></view>
+    </view>
+  </view>

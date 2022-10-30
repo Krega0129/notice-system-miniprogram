@@ -1,0 +1,100 @@
+<cu-custom bgColor="bg-cyan" isBack="{{!!hasBind}}">
+  <text slot="backText">返回</text>
+  <text slot="content">身份绑定</text>
+</cu-custom>
+
+<view wx:if="{{!hasBind}}" class="bg-white" style="height: 100%">
+  <view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>请输入你的个人信息
+    </view>
+  </view>
+  <form>
+    <view class="cu-form-group">
+      <view class="title">学校<text class="text-red">*</text></view>
+      <picker bindchange="changeCampus" model:value="{{index}}" range="{{array}}">
+        <view class="picker flex">
+          {{array[index] || "请选择学校"}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">姓名<text class="text-red">*</text></view>
+      <input type="text" placeholder="请输入姓名" model:value="{{name}}"/>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">学号<text class="text-red">*</text></view>
+      <input placeholder="请输入工号" model:value="{{userNo}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">密码<text class="text-red">*</text></view>
+      <input placeholder="请输入初始密码" password model:value="{{password}}"></input>
+    </view>
+    <radio-group class="block" bindchange="changeRole" model:value="{{role}}">
+      <view class="cu-form-group justify-start">
+        <view class="title">身份<text class="text-red">*</text></view>
+        <view>
+          <label>
+            <radio value="{{1}}"></radio>
+            <text class="title margin-left-xs">教师</text>
+          </label>
+          <label>
+            <radio checked value="{{2}}"></radio>
+            <text class="title margin-left-xs">学生</text>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+
+    <view style="position:absolute;bottom:20%;left:50%;margin-left:-200rpx">
+      <view class="padding flex flex-direction">
+        <button bindtap="_bindInfo" class="text-center margin-top" type="primary">绑定信息</button>
+      </view>
+    </view>
+  </form>
+</view>
+<view wx:else>
+  <view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>你的信息已绑定
+    </view>
+  </view>
+  <view class="flex-sub" wx:if="{{show}}">
+    <view class="cu-form-group">
+      <view class="title">学校</view>
+      <input type="text" placeholder="{{userInfo.university.name}}" disabled/>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">学院</view>
+      <input disabled placeholder="{{userInfo.college.name}}"></input>
+    </view>
+    <view class="cu-form-group" wx:if="{{isStd}}">
+      <view class="title">专业</view>
+      <input disabled placeholder="{{userInfo.students && userInfo.students[0] && userInfo.students[0].specialty && userInfo.students[0].specialty.name || ''}}"></input>
+    </view>
+    <view class="cu-form-group" wx:if="{{isStd}}">
+      <view class="title">班级</view>
+      <input disabled placeholder="{{userInfo.students && userInfo.students[0] && userInfo.students[0].class && userInfo.students[0].class.name || ''}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">姓名</view>
+      <input disabled placeholder="{{userInfo.name}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">工号</view>
+      <input disabled placeholder="{{userInfo.userNo}}"></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">邮箱</view>
+      <input disabled placeholder="{{userInfo.emails}}"></input>
+    </view>
+    <view class="cu-form-group" wx:if="{{!isStd}}">
+      <view class="title">办公室</view>
+      <input disabled placeholder="{{userInfo.teachers && userInfo.teachers[0] && userInfo.teachers[0].office || ''}}"></input>
+    </view>
+    <view class="cu-form-group" wx:if="{{isStd}}">
+      <view class="title">宿舍</view>
+      <input disabled placeholder="{{userInfo.students && userInfo.students[0] && userInfo.students[0].dormitory || ''}}"></input>
+    </view>
+  </view>
+</view>
