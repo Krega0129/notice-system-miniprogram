@@ -7,6 +7,10 @@
     <view class="text-center">
       <image style="width: 128rpx; height: 128rpx" src="../../assets/img/wx_logo.png"></image>
     </view>
-    <button open-type="getUserInfo" bindgetuserinfo="showLogin" class="text-center margin-top" type="primary">授权登录</button>
+    <!-- <button open-type="getUserInfo" bindgetuserinfo="showLogin" class="text-center margin-top" type="primary">授权登录</button> -->
+    <block>
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="text-center margin-top" type="primary"> 授权登录 </button>
+      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="text-center margin-top" type="primary"> 授权登录 </button>
+    </block>
   </view>
 </view>

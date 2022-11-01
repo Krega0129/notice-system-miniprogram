@@ -1,6 +1,5 @@
 // const BASE_URL = 'http://localhost:8888'
-// const BASE_URL = 'http://192.168.1.109:8888'
-const BASE_URL = 'https://krega.goodboycoder.top'
+const BASE_URL = ''
 
 const config = {}
 config.STATECODE_SUCCESS = 200

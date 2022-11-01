@@ -1,4 +1,4 @@
-<cu-custom bgColor="bg-gray" isBack="true">
+<cu-custom bgColor="bg-cyan" isBack="true">
   <text slot="backText">返回</text>
   <text slot="content">教师信息</text>
 </cu-custom>
